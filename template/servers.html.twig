@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{% for server in servers %}
+    <a href="/list-users/{{ server }}">Nazwa serwera: {{ server }}</a>
+{% endfor %}
+{% endblock %}
