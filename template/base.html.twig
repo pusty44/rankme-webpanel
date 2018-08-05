@@ -1,10 +1,137 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}{% endblock %}KODERZ</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="koderZ.pl">
+
+    <title>{% block title %}{% endblock %} :: KentoRankme panel by KODERZ</title>
+
+    <!-- FONT-ICONS -->
+    <link rel="stylesheet" href="/template/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/template/lib/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/template/lib/et-line-font/style.css">
+
+    <!-- TEMPLATE -->
+    <link rel="stylesheet" href="/template/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/template/css/nc-grids.css">
+    <link rel="stylesheet" href="/template/css/main.css">
+    <link rel="stylesheet" href="/template/css/helper.css">
+    <link rel="stylesheet" href="/template/css/responsive.css">
+    <link rel="stylesheet" href="/template/css/style.css">
+
+</head>
+<head>
+
     {% block stylesheets %}{% endblock %}
 </head>
-<body>
-{% block body %}{% endblock %}
+<body class="loader-bg-default5">
+<!-- MAIN-WRAPPER -->
+<div class="mainwrapper tab-widget">
+
+    <!-- LAYER-1 -->
+    <div class="mainwrapper--nclayer1 pd-80 vh100 w100" data-bgcolor="rgba(24.1, 18.7, 40.9, 1)" data-nc-md="pd-0 pd-tb-large pd-b-50" data-nc-sm="pd-0 pd-t-80 pd-b-40">
+
+        <!-- HEADER -->
+        <div class="nclayer1--header pos-abs top left w100">
+
+            <!-- MOBILE HEADER -->
+            <div class="mobheader px-h80 flex-cc pos-rel z9 pd-lr-20">
+                <div class="mobheader--innerwrapper w100">
+                    <div class="flex-row middle-xs">
+
+                        <div class="flex-col-xs-6 align-l">
+
+                            <!-- LOGO -->
+                            <a href="/" class="logo block px-w80">
+                                <img src="/template/images/logo.png" alt="koderZ.pl">
+                            </a><!-- / LOGO -->
+
+                        </div>
+
+                        <div class="flex-col-xs-6 align-r flex-cr" data-nc-sm="hide">
+                            <div class="mob-menu sq40">
+                                <div class="menu-icon dark">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!-- / MOBILE HEADER -->
+
+        </div><!-- / HEADER -->
+
+        <!-- LAYER-2 -->
+        <div class="mainwrapper--nclayer2 h100 w100 overflow-auto bg-cover bg-cc pos-rel" data-bg="/template/images/bg-1.jpg" data-shadow="0px 10px 40px 4px rgba(0,0,0,0.4)">
+
+            <!-- INTRO-SECTION -->
+            <div id="home" class="tb-pn active ncsection w100 flex-cc min-h100 pos-rel" data-bgcolor="rgba(92, 16, 217, 0.7)">
+                <div class="inner-wrapper w100 pd-80" data-nc-sm="align-c pd-0 pd-tb-small">
+
+                    <div class="container-fluid">
+
+                        <div class="flex-row gt60 middle-md">
+
+                            {% block body %}{% endblock %}
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div><!-- / INTRO-SECTION -->
+
+        </div><!-- / LAYER-2 -->
+
+        <!-- FOOTER -->
+        <div class="nclayer1--footer pos-abs bottom left w100">
+            <div class="flex-row middle-xs px-h80" data-nc-md="px-h50" data-nc-sm="px-h40">
+                <div class="flex-col-xs-12">
+
+                    <p class="align-c mr-0 txt-white bold-3"><a href="https://koderz.pl" target="_blank">koderZ.pl</a> &copy; <script>document.write(new Date().getFullYear());</script></p>
+
+                </div>
+            </div>
+        </div><!-- / FOOTER -->
+
+    </div><!-- / LAYER-1 -->
+
+
+
+
+    <div class="nc-popup-overlay" data-gradient="y" data-g-colors="rgba(0, 0, 0,0.6)|rgba(0, 0, 0,0.9)"></div>
+
+</div><!-- / MAIN-WRAPPER -->
+
+
+
+<!-- FONT SELECTION -->
+<script>
+    /* Use fonts with class name in sequence => f-1, f-2, f-3 .... */
+    var fgroup = [
+        'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
+        'Open Sans:300,300i,400,400i,600,600i,700,700i,800,800i',
+        'Fauna One'
+    ];
+</script>
+
+<!-- TEMPLATE -->
+<script type="text/javascript" src="/template/lib/jquery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/template/lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/template/js/plugins.js"></script>
+<script type="text/javascript" src="/template/lib/pace/pace.min.js"></script>
+<script type="text/javascript" src="/template/js/anime.min.js"></script>
+<script type="text/javascript" src="/template/js/main.js"></script>
+<script type="text/javascript" src="/template/js/structure.js"></script>
+<script type="text/javascript" src="/template/js/nc.js"></script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>

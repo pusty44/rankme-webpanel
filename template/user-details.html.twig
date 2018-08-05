@@ -1,85 +1,459 @@
 {% extends 'base.html.twig' %}
+{% block title %}Statystyki gracza: {{ user.name }}{% endblock %}
 {% block body %}
-{{ user.id }}
-    {{ user.steam }}
-    {{ user.name }}
-    {{ user.lastip }}
-    {{ user.score }}
-    {{ user.kills }}
-    {{ user.deaths }}
-    {{ user.assists }}
-    {{ user.suicides }}
-    {{ user.tk }}
-    {{ user.shots }}
-    {{ user.hits }}
-    {{ user.headshots }}
-    {{ user.connected }}
-    {{ user.rounds_tr }}
-    {{ user.rounds_ct }}
-    {{ user.lastconnect }}
+    <div class="col-md-8">
+        <div class=" server_box shadow-1 text-center">
+            <div class="flex-row">
+                <div class="flex-col-md-12">
+                    <h3 class="txt-white">
+                        [ #{{ user.id }} ] {{ user.name }} - {{ user.score }} pkt.
+                    </h3>
+                </div>
+                <div class="flex-col-md-6">
+                    <p class="txt-white">STEAM ID: {{ user.steam }}</p>
+                </div>
+                <div class="flex-col-md-6">
+                    <p class="txt-white">OSTATNIE IP: {{ user.lastip }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class=" server_box shadow-1 text-center">
+            <div class="flex-row">
+                <div class="flex-col-md-4">
+                    <h3 class="txt-white">Kills</h3>
+                    <p class="txt-white">{{ user.kills }}</p>
+                </div>
+                <div class="flex-col-md-4">
+                    <h3 class="txt-white">Deaths</h3>
+                    <p class="txt-white">{{ user.deaths }}</p>
+                </div>
+                <div class="flex-col-md-4">
+                    <h3 class="txt-white">Assists</h3>
+                    <p class="txt-white">{{ user.assists }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="server_box shadow-1 text-center">
+            <div class="flex-row">
+                <div class="flex-col-md-4">
+                    <h5 class="txt-white">Strzałów</h5>
+                    <p class="txt-white">{{ user.shots }}</p>
+                </div>
+                <div class="flex-col-md-4">
+                    <h5 class="txt-white">Trafień</h5>
+                    <p class="txt-white">{{ user.hits }}</p>
+                </div>
+                <div class="flex-col-md-4">
+                    <h5 class="txt-white">HS</h5>
+                    <p class="txt-white">{{ user.headshots }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="server_box shadow-1 text-center">
+            <div class="flex-row">
+                <div class="flex-col-md-4">
+                    <h5 class="txt-white">Rundy TR</h5>
+                    <p class="txt-white">{{ user.rounds_tr }}</p>
+                </div>
+                <div class="flex-col-md-4">
+                    <h5 class="txt-white">Rundy CT</h5>
+                    <p class="txt-white">{{ user.rounds_ct }}</p>
+                </div>
+                <div class="flex-col-md-4">
+                    <h5 class="txt-white">Samobójstwa</h5>
+                    <p class="txt-white">{{ user.suicides }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">ZADANE OBRAŻENIA</h5>
+            <p class="txt-white">{{ user.damage }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">WYGRANE MECZE</h5>
+            <p class="txt-white">{{ user.match_win }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">PRZEGRANE MECZE</h5>
+            <p class="txt-white">{{ user.match_lose }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">PLANTY C4</h5>
+            <p class="txt-white">{{ user.c4_planted }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">WYBUCHY C4</h5>
+            <p class="txt-white">{{ user.c4_exploded }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">ROZBROJENIA</h5>
+            <p class="txt-white">{{ user.c4_defused }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">WYGRANE CT</h5>
+            <p class="txt-white">{{ user.ct_win }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">WYGRANE TR</h5>
+            <p class="txt-white">{{ user.tr_win }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">HOSTY</h5>
+            <p class="txt-white">{{ user.hostages_rescued }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">MVP</h5>
+            <p class="txt-white">{{ user.mvp }}</p>
+        </div>
+    </div>
 
-    Statystyki broni
-    {{ user.kife }}
-    {{ user.glock }}
-    {{ user.hkp2000 }}
-    {{ user.usp_silencer }}
-    {{ user.p250 }}
-    {{ user.deagle }}
-    {{ user.elite }}
-    {{ user.fiveseven }}
-    {{ user.tec9 }}
-    {{ user.cz75a }}
-    {{ user.revolver }}
-    {{ user.nova }}
-    {{ user.xm1014 }}
-    {{ user.mag7 }}
-    {{ user.sawedoff }}
-    {{ user.bizon }}
-    {{ user.mac10 }}
-    {{ user.mp9 }}
-    {{ user.mp7 }}
-    {{ user.ump45 }}
-    {{ user.p90 }}
-    {{ user.galilar }}
-    {{ user.ak47 }}
-    {{ user.scar20 }}
-    {{ user.famas }}
-    {{ user.m4a1 }}
-    {{ user.m4a1_silencer }}
-    {{ user.aug }}
-    {{ user.ssg08 }}
-    {{ user.sg556 }}
-    {{ user.awp }}
-    {{ user.g3sg1 }}
-    {{ user.m249 }}
-    {{ user.negev }}
-    {{ user.hegrenade }}
-    {{ user.flashbang }}
-    {{ user.smokegrenade }}
-    {{ user.inferno }}
-    {{ user.decoy }}
-    {{ user.taser }}
+    <div class="col-md-12 text-center">
+        <hr />
+        <h3 class="txt-white">STATYSTYKI BRONI BIAŁEJ</h3>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">NÓŻ</h5>
+            <p class="txt-white">{{ user.knife }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">HE</h5>
+            <p class="txt-white">{{ user.hegrenade }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">FB</h5>
+            <p class="txt-white">{{ user.flashbang }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">SMOKE</h5>
+            <p class="txt-white">{{ user.smokegrenade }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">Molotov</h5>
+            <p class="txt-white">{{ user.inferno }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">WABIK</h5>
+            <p class="txt-white">{{ user.decoy }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">TASER</h5>
+            <p class="txt-white">{{ user.taser }}</p>
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <hr />
+        <h3 class="txt-white">STATYSTYKI PISTOLETÓW</h3>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">GLOCK</h5>
+            <p class="txt-white">{{ user.glock }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">P2000</h5>
+            <p class="txt-white">{{ user.hkp2000 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">USP</h5>
+            <p class="txt-white">{{ user.usp_silencer }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">P250</h5>
+            <p class="txt-white">{{ user.p250 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">DEAGLE</h5>
+            <p class="txt-white">{{ user.deagle }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">DUAL ELITE</h5>
+            <p class="txt-white">{{ user.elite }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">FIVESEVEN</h5>
+            <p class="txt-white">{{ user.fiveseven }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">TEC-9</h5>
+            <p class="txt-white">{{ user.tec9 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">CZ75A</h5>
+            <p class="txt-white">{{ user.cz75a }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">REWOLWER</h5>
+            <p class="txt-white">{{ user.revolver }}</p>
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <hr />
+        <h3 class="txt-white">STATYSTYKI SHOTGUN'ÓW</h3>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">NOVA</h5>
+            <p class="txt-white">{{ user.nova }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">XM1014</h5>
+            <p class="txt-white">{{ user.xm1014 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">MAG-7</h5>
+            <p class="txt-white">{{ user.mag7 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">OBRZYN</h5>
+            <p class="txt-white">{{ user.sawedoff }}</p>
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <hr />
+        <h3 class="txt-white">STATYSTYKI UMP</h3>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">BIZON</h5>
+            <p class="txt-white">{{ user.bizon }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">MAC-10</h5>
+            <p class="txt-white">{{ user.mac10 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">MAG-7</h5>
+            <p class="txt-white">{{ user.mag7 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">MP-9</h5>
+            <p class="txt-white">{{ user.mp9 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">MP-7</h5>
+            <p class="txt-white">{{ user.mp7 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">UMP-45</h5>
+            <p class="txt-white">{{ user.ump45 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">P90</h5>
+            <p class="txt-white">{{ user.p90 }}</p>
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <hr />
+        <h3 class="txt-white">STATYSTYKI BRONI AUTOMATYCZNEJ</h3>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">ARGALIL</h5>
+            <p class="txt-white">{{ user.galilar }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">AK-47</h5>
+            <p class="txt-white">{{ user.ak47 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">FAMAS</h5>
+            <p class="txt-white">{{ user.famas }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">M4A4</h5>
+            <p class="txt-white">{{ user.m4a1 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">M4A1</h5>
+            <p class="txt-white">{{ user.m4a1_silencer }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">AUG</h5>
+            <p class="txt-white">{{ user.aug }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">SSG</h5>
+            <p class="txt-white">{{ user.ssg08 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">SG556</h5>
+            <p class="txt-white">{{ user.sg556 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">M249</h5>
+            <p class="txt-white">{{ user.m249 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">NEGEV</h5>
+            <p class="txt-white">{{ user.negev }}</p>
+        </div>
+    </div>
 
-    statystyki obrażeń:
-    {{ user.head }}
-    {{ user.chest }}
-    {{ user.stomach }}
-    {{ user.left_arm }}
-    {{ user.right_arm }}
-    {{ user.left_leg }}
-    {{ user.right_leg }}
-    {{ user.c4_planted }}
-    {{ user.c4_exploded }}
-    {{ user.c4_defused }}
-    {{ user.ct_win }}
-    {{ user.tr_win }}
-    {{ user.hostages_rescued }}
-    {{ user.vip_killed }}
-    {{ user.vip_escaped }}
-    {{ user.vip_played }}
-    {{ user.mvp }}
-    {{ user.damage }}
-    {{ user.match_win }}
-    {{ user.match_draw }}
-    {{ user.match_lose }}
+    <div class="col-md-12 text-center">
+        <hr />
+        <h3 class="txt-white">STATYSTYKI BRONI SNAJPERSKIEJ</h3>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">SSG</h5>
+            <p class="txt-white">{{ user.ssg08 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">AWP</h5>
+            <p class="txt-white">{{ user.awp }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">SCAR-20</h5>
+            <p class="txt-white">{{ user.scar20 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">G3SG1</h5>
+            <p class="txt-white">{{ user.g3sg1 }}</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="server_box shadow-1 text-center">
+            <h5 class="txt-white">SSG</h5>
+            <p class="txt-white">{{ user.ssg08 }}</p>
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <hr />
+        <h3 class="txt-white">STATYSTYKI OBRAŻEŃ</h3>
+    </div>
+    <div class="col-md-12 text-center">
+        <div class="server_box shadow-1 text-center">
+            <div class="flex-row">
+                <div class="col-md-2">
+                    <h5 class="txt-white">GŁOWA</h5>
+                    <p class="txt-white">{{ user.head }}</p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="txt-white">KLATKA</h5>
+                    <p class="txt-white">{{ user.chest }}</p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="txt-white">BRZUCH</h5>
+                    <p class="txt-white">{{ user.stomach }}</p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="txt-white">L RĘKA</h5>
+                    <p class="txt-white">{{ user.left_arm }}</p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="txt-white">P RĘKA</h5>
+                    <p class="txt-white">{{ user.right_arm }}</p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="txt-white">L NOGA</h5>
+                    <p class="txt-white">{{ user.left_leg }}</p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="txt-white">P NOGA</h5>
+                    <p class="txt-white">{{ user.right_leg }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}

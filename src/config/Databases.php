@@ -9,14 +9,16 @@ namespace src\config;
 
 class Databases{
     private $database = array(
-        'test' => array(
+        'arena' => array(
+            'name' => 'testowy serwer z bardzo długą nazwą dla niego',
             'host' => 'localhost',
             'port' => 3307,
             'user' => 'root',
             'password' => 'usbw',
             'dbName' => 'rankme'
         ),
-        'test1' => array(
+        'dd2' => array(
+            'name' => 'testowy serwer z bardzo długą nazwą dla niego123445236256',
             'host' => 'localhost',
             'port' => 3307,
             'user' => 'root',
@@ -28,12 +30,11 @@ class Databases{
     /**
      * @return array
      */
-    public function getDatabase(): array
-    {
+    public function getDatabase()  {
         return $this->database;
     }
 
-    public function getMessage($message) :array {
+    public function getMessage($message) {
         return $this->database[$message];
     }
 }

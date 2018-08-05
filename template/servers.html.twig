@@ -1,6 +1,24 @@
 {% extends 'base.html.twig' %}
+{% block title %}Wybór serwera{% endblock %}
 {% block body %}
-{% for server in servers %}
-    <a href="/list-users/{{ server }}">Nazwa serwera: {{ server }}</a>
-{% endfor %}
+    <div class="flex-col-md-6 text-center">
+        <p class="txt-white">Witaj w webowym panelu statyk KentoRankMe stworzonym przez KoderZ.pl <br />
+        Rozpocznij przeglądanie statystyk od wyboru serwera.</p>
+        <hr />
+        <h3 class="txt-white">Wybór serwera</h3>
+    </div>
+    <div class="flex-col-md-6 text-center">
+        <ul class="server_list">
+            {% for server in servers %}
+
+                    <li class="server_box shadow-1">
+                        <a href="/?server={{ server.key }}&action=list-users" >
+                        <p>{{ server.value }}</p>
+                        </a>
+                    </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+
 {% endblock %}

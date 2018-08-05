@@ -43,13 +43,25 @@ class dbService
 
     public function fetchData($dbh){
         try {
-            $stmt = $dbh->prepare('SELECT `id`,`steam`, `name`, `score` FROM rankme');
+            $stmt = $dbh->prepare('SELECT `id`,`steam`, `name`, `score` FROM rankme ORDER BY score DESC');
             $stmt->execute();
             return $stmt->fetchAll();
         }catch(Exception $e){
             echo $e->getMessage();
         }
 
+    }
+    public function searchUser($dbh,$nick){
+        try {
+            $stmt = $dbh->prepare('SELECT count(*) as istnieje,id FROM rankme WHERE `name`=:name LIMIT 1');
+            $stmt->bindValue(':name',$nick,PDO::PARAM_STR);
+            $stmt->execute();
+            $istnieje = $stmt->fetch();
+            if($istnieje['istnieje']) return $istnieje['id'];
+            else return false;
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
     }
     public function fetchUser($dbh,$id){
         try {
